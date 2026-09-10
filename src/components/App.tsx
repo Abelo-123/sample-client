@@ -31,7 +31,8 @@ export function App() {
   useEffect(() => {
     if (!lp?.tgWebAppInitData) return;
     try {
-      const params = new URLSearchParams(lp.tgWebAppInitData);
+      const raw = typeof lp.tgWebAppInitData === 'string' ? lp.tgWebAppInitData : String((lp as Record<string, unknown>).tgWebAppInitDataRaw || '');
+      const params = new URLSearchParams(raw);
       const userRaw = params.get('user');
       if (!userRaw) return;
       const user = JSON.parse(userRaw);
