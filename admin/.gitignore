@@ -1,0 +1,17 @@
+# Admin Dependencies
+node_modules/
+
+# Admin Build Output
+dist/
+build/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+
+# Vite Cache
+.vite/
+
+# Logs
+*.log
